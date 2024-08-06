@@ -1,0 +1,21 @@
+<div>
+    <h2>{{.BodyTitle}}</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{range .Items}}
+        <tr>
+            <td>{{.ID}}</td>
+            <td>{{.Name}}</td>
+            <td><button hx-get="/update/{{.ID}}" hx-swap="outerHTML">Update</button></td>
+        </tr>
+        {{end}}
+        </tbody>
+    </table>
+</div>
